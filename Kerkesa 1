@@ -1,0 +1,55 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+
+int main() {
+	vector<int> A;
+	A.push_back(7);
+	A.push_back(5);
+	A.push_back(6);
+	A.push_back(3);
+	cout << "[";
+	for (auto& A : A) {
+		cout << A << " ";
+	}cout << "]" << endl;
+
+	A.insert(A.begin(),2);
+	cout << "[";
+	for (auto& A : A) {
+		cout << A << " ";
+	}cout << "]"<<endl;
+
+	A.erase(A.begin() + 3);
+	cout << "[";
+	for (auto& A : A) {
+		cout << A << " ";
+	}cout << "]" << endl;
+
+	A.insert(A.begin() + 2, -3);
+	cout << "[";
+	for (auto& A : A) {
+		cout << A << " ";
+	}cout << "]" << endl;
+
+	A.erase(A.begin());
+	cout << "[";
+	for (auto& A : A) {
+		cout << A << " ";
+	}cout << "]" << endl;
+
+	A.at(1) = 2 * A.at(1);
+	cout << "[";
+	for (auto& A : A) {
+		cout << A << " ";
+	}cout << "]"<<endl;
+
+	int k = 0;
+	for (auto& A : A) {
+		if (A > 0) {
+			k++;
+		}
+	}
+	cout << "Numri i anetareve pozitiv ne varg eshte : " << k << endl;
+	return 0;
+}
