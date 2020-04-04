@@ -1,0 +1,62 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+
+int main() {
+	const int n = 10;
+	int v[n];
+	for (int i = 0; i < n; i++) {
+		cout << "Anetari i " << i + 1 << " : ";
+		cin >> v[i];
+	}cout << endl;
+	vector<int>A;
+	for (int i = 0; i < n; i++) {
+		A.push_back(v[i]);
+	}cout << "[";
+	for (auto& A : A) {
+		cout << A << " ";
+	}cout << "]" << endl;
+	vector<int>numrat_qift;
+	vector<int>numrat_tek;
+	for (auto& A : A) {
+		if (A % 2 == 0) {
+			numrat_qift.push_back(A);
+		}
+		else {
+			numrat_tek.push_back(A);
+		}
+	}
+	int s1 = 0;
+	cout << "Vargu i numrave qift [";
+	for (auto& numrat_qift : numrat_qift) {
+		s1 += numrat_qift;
+		cout << numrat_qift << " ";
+	}cout << "]" << endl;
+	cout<<"Me numer te anetareve : "<<numrat_qift.size()<<endl;
+
+	int s2=0;
+	cout << "Vargu i numrave tek [";
+	for (auto& numrat_tek : numrat_tek) {
+		s2 += numrat_tek;
+		cout << numrat_tek << " ";
+	}cout << "]" << endl;
+	cout <<"Me numer te anetareve : "<< numrat_tek.size() << endl;
+
+	if (s1 > s2) {
+		cout << "Vargu : [";
+		for (auto& numrat_qift : numrat_qift) {
+			cout << numrat_qift << " ";
+		}cout << "] ka shumen me te madhe." << endl;
+	}
+	else {
+		cout << "Vargu : [";
+		for (auto& numrat_tek : numrat_tek) {
+			cout << numrat_tek << " ";
+		}cout << "] ka shumen me te madhe." << endl;
+	}
+
+
+
+	return 0;
+}
